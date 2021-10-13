@@ -1,0 +1,9 @@
+apt-get install -y wget
+wget https://github.com/prometheus/node_exporter/releases/download/v1.1.2/node_exporter-1.1.2.linux-amd64.tar.gz
+tar xvfz node_exporter-1.1.2.linux-amd64.tar.gz
+cd node_exporter-1.1.2.linux-amd64
+./home/node_exporter-1.1.2.linux-amd64/node_exporter
+
+Grafana dashbord
+url: https://grafana.com/grafana/dashboards/1860?pg=dashboards&plcmt=featured-sub1
+code: 1860

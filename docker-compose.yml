@@ -1,0 +1,32 @@
+version: '3.8'
+
+services: 
+    nginx:
+        container_name: nginx_container
+        ports:
+            - "3500:80"
+            - "3501:9100"
+        build: ./nginx
+        networks: 
+            - netsec_net
+    
+    grafana:
+        container_name: grafana_container
+        image: grafana/grafana
+        ports: 
+            - "3000:3000"
+        networks: 
+            - netsec_net
+
+    prometheus:
+        container_name: prometheus_container
+        image: prom/prometheus
+        ports: 
+            - "9090:9090"
+        volumes:
+        - "./prometheus:/etc/prometheus"
+        networks: 
+            - netsec_net
+
+networks: 
+    netsec_net:
